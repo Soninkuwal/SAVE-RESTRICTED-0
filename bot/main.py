@@ -1,8 +1,8 @@
 import telebot
 from telebot.types import Message
-from config import BOT_TOKEN
+from config import BOT_TOKEN, PORT
 from user_data import initialize_user, clear_user_data
-from utils import generate_main_menu, generate_settings_menu
+from utils import generate_main_menu, generate_settings_menu, generate_links_menu
 
 # Initialize the bot
 bot = telebot.TeleBot(BOT_TOKEN)
@@ -59,49 +59,6 @@ def settings_menu(message: Message):
 def back_to_main_menu(message: Message):
     bot.reply_to(message, "Main Menu:", reply_markup=generate_main_menu())
 
-# Command: Set Thumbnail
-@bot.message_handler(func=lambda m: m.text == "📷 Set Thumbnail")
-def set_thumbnail(message: Message):
-    user_id = message.from_user.id
-    user = initialize_user(user_id)
-    if user["logged_in"]:
-        bot.reply_to(message, "Reply to a photo to set it as your thumbnail.")
-    else:
-        bot.reply_to(message, "You need to log in first.")
-
-# Command: Get Thumbnail
-@bot.message_handler(func=lambda m: m.text == "📷 Get Thumbnail")
-def get_thumbnail(message: Message):
-    user_id = message.from_user.id
-    user = initialize_user(user_id)
-    if user["logged_in"]:
-        if user["thumbnail"]:
-            bot.send_photo(user_id, user["thumbnail"], caption="Here is your thumbnail.")
-        else:
-            bot.reply_to(message, "No thumbnail set.")
-    else:
-        bot.reply_to(message, "You need to log in first.")
-
-# Add Word
-@bot.message_handler(func=lambda m: m.text == "➕ Add Word")
-def add_word(message: Message):
-    user_id = message.from_user.id
-    user = initialize_user(user_id)
-    if user["logged_in"]:
-        bot.reply_to(message, "Send the word to add.")
-    else:
-        bot.reply_to(message, "You need to log in first.")
-
-# Delete Word
-@bot.message_handler(func=lambda m: m.text == "➖ Delete Word")
-def delete_word(message: Message):
-    user_id = message.from_user.id
-    user = initialize_user(user_id)
-    if user["logged_in"]:
-        bot.reply_to(message, "Send the word to delete.")
-    else:
-        bot.reply_to(message, "You need to log in first.")
-
 # Command: Links Menu
 @bot.message_handler(func=lambda m: m.text == "🔗 Links")
 def links_menu(message: Message):
@@ -111,6 +68,7 @@ def links_menu(message: Message):
         links = user.get("links", [])
         if links:
             bot.reply_to(message, f"First: {links[0]}\nLast: {links[-1]}")
+            bot.send_message(message.chat.id, "Here are your links:", reply_markup=generate_links_menu(links))
         else:
             bot.reply_to(message, "No links found.")
     else:
@@ -118,6 +76,5 @@ def links_menu(message: Message):
 
 # Start the bot
 if __name__ == "__main__":
-    print("Bot is running...")
+    print(f"Bot is running on port {PORT}...")
     bot.infinity_polling()
-  
