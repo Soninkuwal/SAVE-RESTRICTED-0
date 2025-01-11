@@ -1,4 +1,4 @@
-# In-memory user data storage (use a database for production)
+# User data storage (use a database for production)
 user_data = {}
 
 def initialize_user(user_id):
@@ -15,4 +15,3 @@ def initialize_user(user_id):
 def clear_user_data(user_id):
     if user_id in user_data:
         del user_data[user_id]
-      
