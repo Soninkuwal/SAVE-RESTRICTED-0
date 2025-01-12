@@ -1,67 +1,43 @@
 # SAVE-RESTRICTED-0
 
-# Telegram Sport Link Bot
+    # Telegram Sports Bot
 
-This Telegram bot allows you to manage restricted sport links for public and private channels, groups, and topic groups. It also provides user authentication, settings customization, and broadcast functionality.
+    This bot is designed to manage and share sports-related links from Telegram channels, groups, and topics.
 
-## Features
+    ## Features
 
-•   **Link Management:**
-    •   Store sport links.
-    •   Add, delete, and replace individual links.
-    •   Batch add/delete 1000 links at a time.
-    •   Cancel an ongoing batch operation.
-•   **User Authentication:**
-    •   Login using a phone number with country code.
-    •   Logout using a phone number.
-•   **Settings:**
-    •   Set a custom thumbnail for sports content.
-    •   Add custom words to replace in messages.
-    •   Add custom words to delete from messages.
-•   **Broadcasting:**
-    •   Send broadcast messages to all logged-in users.
-•   **Logging:**
-    •   Log new user details (ID, profile) to a designated log channel.
+    *   **Link Management:**
+        *   Store links from public/private channels, groups, and topic groups.
+        *   Add, delete links with custom type
+        *   Batch import links from text file.
+    *   **Welcome Message:**
+        *   Send a welcome message with an image and "Join" buttons for multiple saved links.
+    *   **User Authentication:**
+        *   Login with phone number and country code.
+        *   Logout.
+    *   **Settings:**
+        *   Upload custom thumbnail.
+        *   Replace custom words in links.
+        *   Delete custom words in links.
+        *    Cancel batch import
+        *   Broadcast Message to all users
+    *   **Auto Reaction Emoji:**
+        *   Bot auto-reacts to all user commands with a specified emoji.
+    *   **User Logging:**
+        *   Log new users, user IDs, and profile details to a log channel.
 
-## Bot Commands
+    ## Commands
 
-```
-start - Start the bot and show login button
-login - Start the login process
-logout - Log out of the bot
-settings - Open the settings menu
-addlink - Add a new link
-replace_link - Replace an old link with new link
-show_first_last_number - Show first and last links
-batch_addlink - Start batch addition of links
-batch_deletelink - Start batch deletion of links
-cancel_batch_link - cancel ongoing batch operation
-broadcast - Send a broadcast message
-```
+    *   `/start`: Start the bot and see the welcome message with join links.
+    *   `/help`: Get a list of available bot commands.
+    *   `/login`: Login to the bot using phone number with country code.
+    *   `/logout`: Logout from bot.
+    *   `/settings`: Open the bot settings menu.
+    *   `/add_link <type> <link>`: Add a link with specified type (public, private, or topic)
+    *   `/delete_link <link_id>`: Delete a specific link.
+    *    `/broadcast <message>`: Send broadcast message to all bot users.
 
-## Settings Menu
+    ## Setup
 
-•   **Custom Thumbnail:** Set a URL for a custom thumbnail.
-•   **Add Replace Word:** Add a word and its replacement.
-•   **Add Delete Word:** Add a word to be removed from messages.
-
-## How to Use
-
-1.  Send `/start` to the bot to start.
-2.  Login using your phone number with country code.
-3.  Use `/settings` to customize thumbnails, words to replace or delete.
-4.  Use other commands to manage your sport links and send broadcasts.
-5.  Use `/logout` to logout.
-
-## Deployment
-
-1.  Build a Docker Image: `docker build -t telegram_sport_bot .`
-2.  Deploy the bot to your server (Koyeb or Render). Make sure to set the port to 8080 and environment variables.
-
-## Environment Variables
-
-•   `API_ID`: Your Telegram API ID.
-•   `API_HASH`: Your Telegram API Hash.
-•   `BOT_TOKEN`: Your Telegram Bot Token.
-•   `DATABASE_URL`: URL for the SQLite database.
-•   `LOG_CHANNEL_ID`: ID of the channel where new user logs should be sent.
+    1.  **Install Python:** Ensure you have Python 3.7+ installed.
+    2.  **Install dependencies:**
