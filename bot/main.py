@@ -5,9 +5,6 @@ from user_data import initialize_user, clear_user_data, add_user_link, get_user_
 from utils import generate_main_menu, generate_settings_menu, generate_links_menu, generate_user_info_menu, generate_broadcast_button
 import logging
 
-docker run -it telegram-bot /bin/bash
-cd /app
-ls bot/
     
 
 # Initialize the bot
