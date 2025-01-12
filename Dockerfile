@@ -1,15 +1,12 @@
-FROM python:3.9-slim
+FROM python:3.11-slim-bookworm
 
 WORKDIR /app
 
-# Copy all project files into the container
-COPY . /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
-# Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
 
-# Expose the necessary port
 EXPOSE 8080
 
-# Run the bot
-CMD ["python", "bot/main.py"]
+CMD ["python", "main.py"]
