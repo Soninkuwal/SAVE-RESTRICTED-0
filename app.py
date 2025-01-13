@@ -1,4 +1,10 @@
-    from bot.main import main
+from flask import Flask
+app = Flask(__name__)
 
-    if __name__ == '__main__':
-        main()
+@app.route('/')
+def hello_world():
+    return 'Hello from Tech VJ'
+
+
+if __name__ == "__main__":
+    app.run()
