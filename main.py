@@ -6,7 +6,7 @@
 
     logger = setup_logger(__name__)
 
-    if __name__ == "__main__":
+    def main():
         bot = Client(
             "sport_bot",
             api_id=API_ID,
