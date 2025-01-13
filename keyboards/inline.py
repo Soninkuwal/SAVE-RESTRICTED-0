@@ -15,6 +15,8 @@
                 [InlineKeyboardButton("Batch Import", callback_data="batch_import")],
                 [InlineKeyboardButton("Cancel Batch", callback_data="cancel_batch")],
                 [InlineKeyboardButton("Broadcast", callback_data="broadcast")],
+                [InlineKeyboardButton("Add Admin", callback_data="add_admin")], # New Admin Add Button
+                [InlineKeyboardButton("Add Log Channel", callback_data="add_log_channel")],# New Log Channel Add Button
             ]
         )
 
@@ -24,10 +26,10 @@
                 [InlineKeyboardButton("Cancel", callback_data="cancel")],
             ]
         )
-    
+
     def thumbnail_keyboard():
         return InlineKeyboardMarkup(
            [
                 [InlineKeyboardButton("Delete Thumbnail", callback_data="delete_thumbnail")],
            ]
-              )
+                )
