@@ -1,0 +1,2 @@
+docker build -t your_bot_name .
+docker run your_bot_name
