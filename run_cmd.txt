@@ -1,3 +1,3 @@
-docker build -t your_bot_name .
-pip install flask
-docker run your_bot_name
+gunicorn app:app & python3 main.py
+              or
+gunicorn app:app & python3 bot.py
