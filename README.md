@@ -1,5 +1,3 @@
-# SAVE-RESTRICTED-0
-
     # Telegram Sports Bot
 
     This bot is designed to manage and share sports-related links from Telegram channels, groups, and topics.
@@ -19,8 +17,10 @@
         *   Upload custom thumbnail.
         *   Replace custom words in links.
         *   Delete custom words in links.
-        *    Cancel batch import
+        *   Cancel batch import
         *   Broadcast Message to all users
+ *   Add new admin through the bot
+ *   Add Log channel ID through bot
     *   **Auto Reaction Emoji:**
         *   Bot auto-reacts to all user commands with a specified emoji.
     *   **User Logging:**
