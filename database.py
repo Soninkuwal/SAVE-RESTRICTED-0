@@ -46,7 +46,7 @@
             if user:
                 return user.get('status', None)
             return None
-        
+
         def update_user_settings(self,user_id,settings):
              return self.users_collection.update_one({"user_id": user_id}, {"$set": {"settings": settings}},upsert=True)
 
