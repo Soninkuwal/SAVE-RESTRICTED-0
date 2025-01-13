@@ -1,3 +1,2 @@
-gunicorn app:app & python3 main.py
-              or
-gunicorn app:app & python3 bot.py
+docker build -t your_bot_name .
+  docker run your_bot_name
