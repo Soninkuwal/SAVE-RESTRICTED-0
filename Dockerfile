@@ -1,13 +1,12 @@
-    FROM python:3.9-slim-buster
+    FROM python:3.9-slim
 
-    WORKDIR /app
+WORKDIR /app
 
-    COPY black app.py .
-    RUN pip install black 
-        
-        
+COPY requirements.txt .
 
+RUN pip install --no-cache-dir -r requirements.txt
 
-    COPY . .
+COPY . .
 
-    CMD ["python", "app.py"]
+CMD ["python", "app.py"]
+    
