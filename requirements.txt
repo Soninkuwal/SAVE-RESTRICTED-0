@@ -1,22 +1,8 @@
-pyrogram==2.0.107
 python-dotenv
+pyrogram
 pymongo
 
-pyrofork==2.3.48
-tgcrypto
-motor
-pyromod
-opencv-python-headless
-requests
-pytz
-flask
-telethon
-aiojobs
-werkzeug==2.2.2
-PyPDF2
-reportlab
-PyMuPDF
-cryptg
+
 
 Flask==1.1.2
 gunicorn==20.1.0
