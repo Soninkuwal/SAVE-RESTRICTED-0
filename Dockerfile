@@ -7,7 +7,4 @@
 
     COPY . .
 
-    
-
-    CMD ["python", "bot/main.py"]
-    
+    CMD ["python", "app.py"]
