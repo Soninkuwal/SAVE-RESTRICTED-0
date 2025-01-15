@@ -1,5 +1,5 @@
+pyrogram==2.0.107
 python-dotenv
-pyrogram
 pymongo
 
 pyrofork==2.3.48
